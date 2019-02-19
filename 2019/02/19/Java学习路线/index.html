@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'F4KRTCO80I',
+      apiKey: 'a5a2ad2d2703f01298a231ccff6a80c6',
+      indexName: 'kunlingou-blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"关键字查找","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="第一阶段：Java基础第一部分：Java开发介绍 DOS常用命令 JVM、JRE、JDK之间的关系 Java开发环境的搭建：安装JDK，配置环境变量 Java入门程序（Java的开发流程） Java的注释，标识符、标识符的命名规范 Java基本数据类型 变量和常量的定义及初始化 Java的运算符 运算符的优先级 Java分支语句之if…else 循环的嵌套 方法的定义 方法的形参和实参 方法的压栈">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习路线">
+<meta property="og:url" content="https://www.kunlingou.club/2019/02/19/Java学习路线/index.html">
+<meta property="og:site_name" content="kunlingou">
+<meta property="og:description" content="第一阶段：Java基础第一部分：Java开发介绍 DOS常用命令 JVM、JRE、JDK之间的关系 Java开发环境的搭建：安装JDK，配置环境变量 Java入门程序（Java的开发流程） Java的注释，标识符、标识符的命名规范 Java基本数据类型 变量和常量的定义及初始化 Java的运算符 运算符的优先级 Java分支语句之if…else 循环的嵌套 方法的定义 方法的形参和实参 方法的压栈">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-19T12:49:38.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习路线">
+<meta name="twitter:description" content="第一阶段：Java基础第一部分：Java开发介绍 DOS常用命令 JVM、JRE、JDK之间的关系 Java开发环境的搭建：安装JDK，配置环境变量 Java入门程序（Java的开发流程） Java的注释，标识符、标识符的命名规范 Java基本数据类型 变量和常量的定义及初始化 Java的运算符 运算符的优先级 Java分支语句之if…else 循环的嵌套 方法的定义 方法的形参和实参 方法的压栈">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.kunlingou.club/2019/02/19/Java学习路线/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java学习路线 | kunlingou</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ceea1204ee8d492ae59c801f05277c8f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kunlingou</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">不过一念</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.kunlingou.club/2019/02/19/Java学习路线/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kunlin Gou">
+      <meta itemprop="description" content="个人博客，欢迎交流和学习">
+      <meta itemprop="image" content="/images/baracktocat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kunlingou">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java学习路线
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-19 20:35:27 / 修改时间：20:49:38" itemprop="dateCreated datePublished" datetime="2019-02-19T20:35:27+08:00">2019-02-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2019/02/19/Java学习路线/" class="leancloud_visitors" data-flag-title="Java学习路线">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第一阶段：Java基础"><a href="#第一阶段：Java基础" class="headerlink" title="第一阶段：Java基础"></a>第一阶段：Java基础</h2><h3 id="第一部分：Java开发介绍"><a href="#第一部分：Java开发介绍" class="headerlink" title="第一部分：Java开发介绍"></a>第一部分：Java开发介绍</h3><ol>
+<li>DOS常用命令</li>
+<li>JVM、JRE、JDK之间的关系</li>
+<li>Java开发环境的搭建：安装JDK，配置环境变量</li>
+<li>Java入门程序（Java的开发流程）</li>
+<li>Java的注释，标识符、标识符的命名规范</li>
+<li>Java基本数据类型</li>
+<li>变量和常量的定义及初始化</li>
+<li>Java的运算符</li>
+<li>运算符的优先级</li>
+<li>Java分支语句之if…else</li>
+<li>循环的嵌套</li>
+<li>方法的定义</li>
+<li>方法的形参和实参</li>
+<li>方法的压栈</li>
+<li>方法的递归调用<h3 id="第二部分：Java数组"><a href="#第二部分：Java数组" class="headerlink" title="第二部分：Java数组"></a>第二部分：Java数组</h3></li>
+<li>Java 数组的定义</li>
+<li>Java 数组的声明</li>
+<li>数组的优势与局限</li>
+<li>数组的动态初始化</li>
+<li>数组的存储特点（堆和栈）</li>
+<li>数组的遍历访问（普通循环，增强for循环）</li>
+<li>数组元素的顺序查找</li>
+<li>数组元素的二分法查找</li>
+<li>数组元素的选择排序</li>
+<li>数组元素的冒泡法排序</li>
+<li>Arrays工具类的使用</li>
+<li>二维数组的介绍</li>
+<li>二维数组的声明与初始化</li>
+<li>二维数组的遍历</li>
+<li>二维数组的使用<h3 id="第三部分：Java面向对象"><a href="#第三部分：Java面向对象" class="headerlink" title="第三部分：Java面向对象"></a>第三部分：Java面向对象</h3></li>
+<li>面向对象设计思想</li>
+<li>面向对象的分析与设计</li>
+<li>Java与面向对象</li>
+<li>类中成员变量的定义与意义</li>
+<li>构造方法的定义和调用</li>
+<li>面向对象的封装特性</li>
+<li>局部变量和成员变量的作用域问题</li>
+<li>静态属性、静态方法、静态代码块</li>
+<li>面向对象的继承特性</li>
+<li>继承中构造方法的细节</li>
+<li>面向对象的多态特性</li>
+<li>抽象方法与抽象类</li>
+<li>接口的介绍</li>
+<li>通过内部类制作性能检测工具</li>
+<li>Java的内存分析<h3 id="第四部分：常用基础类"><a href="#第四部分：常用基础类" class="headerlink" title="第四部分：常用基础类"></a>第四部分：常用基础类</h3></li>
+<li>枚举类型介绍</li>
+<li>枚举的定义</li>
+<li>结合switch-case使用枚举</li>
+<li>String字符串</li>
+<li>字符串缓冲区StringBuffer和StringBuilder</li>
+<li>字符串与缓冲区的区别</li>
+<li>基本类型的包装类型</li>
+<li>Date类的使用</li>
+<li>SimpleDateFormat类的使用</li>
+<li>Math类的使用</li>
+<li>Random类的使用</li>
+<li>Runtime类的使用</li>
+<li>System 类的使用</li>
+<li>Calendar类的使用</li>
+<li>Java8新特性<h3 id="第五部分：集合"><a href="#第五部分：集合" class="headerlink" title="第五部分：集合"></a>第五部分：集合</h3></li>
+<li>集合的概念和作用</li>
+<li>集合和数组的区别</li>
+<li>集合框架体系介绍</li>
+<li>集合框架之Collection接口</li>
+<li>泛型的使用</li>
+<li>ArrayList和LinkedList的方法使用</li>
+<li>ArrayList和LinkedList各自的工作原理分析原理分析</li>
+<li>Vector和Stack使用介绍</li>
+<li>使用多种方式遍历集合</li>
+<li>迭代器的使用和工作原理</li>
+<li>HashSet和LinkedHashSet各自的工作原理分析</li>
+<li>集合框架之Map接口</li>
+<li>TreeMap的方法使用和排序方式</li>
+<li>分析Set和Map之间的区别与联系</li>
+<li>Collections工具类的使用<h3 id="第六部分：IO流"><a href="#第六部分：IO流" class="headerlink" title="第六部分：IO流"></a>第六部分：IO流</h3></li>
+<li>File类的作用</li>
+<li>File类中常用方法的使用介绍</li>
+<li>使用File类操作文件和文件夹</li>
+<li>相对路径和绝对路径的介绍</li>
+<li>IO流的概念和工作原理</li>
+<li>IO流的分类</li>
+<li>文件流的使用</li>
+<li>转换流的使用</li>
+<li>缓冲流的使用</li>
+<li>对象流的使用</li>
+<li>内存流的使用</li>
+<li>使用不同的流实现文件内容的拷贝</li>
+<li>RandomAccessFile类的使用</li>
+<li>Properties类的使用</li>
+<li>装饰者设计模式<h3 id="第七部分：多线程"><a href="#第七部分：多线程" class="headerlink" title="第七部分：多线程"></a>第七部分：多线程</h3></li>
+<li>进程和线程的介绍</li>
+<li>进程和线程之间的区别与联系</li>
+<li>线程实现方式之继承自Thread类</li>
+<li>线程实现方式之实现Runnable接口</li>
+<li>线程实现方式之线程池</li>
+<li>线程的生命周期</li>
+<li>线程中常用方法的使用</li>
+<li>多线程中的临界资源问题分析</li>
+<li>解决临界资源问题之同步代码块</li>
+<li>解决临界资源问题之同步方法</li>
+<li>解决临界资源问题之ReentrantLock</li>
+<li>多线程讲解和理解</li>
+<li>多线程在单例中的应用</li>
+<li>死锁介绍以及案例演示</li>
+<li>生产者与消费者设计模式<h3 id="第八部分：异常"><a href="#第八部分：异常" class="headerlink" title="第八部分：异常"></a>第八部分：异常</h3></li>
+<li>异常的概念</li>
+<li>异常的分类</li>
+<li>异常的理解</li>
+<li>常见异常介绍</li>
+<li>运行时异常</li>
+<li>编译时异常</li>
+<li>运行和编译异常区别</li>
+<li>异常的处理方式之捕获异常</li>
+<li>异常的处理方式之抛出异常</li>
+<li>异常的处理方式之断点调试</li>
+<li>断点调试之引导运行步骤</li>
+<li>自定义异常</li>
+<li>异常关键字处理</li>
+<li>关键字执行流程</li>
+<li>异常总结<h3 id="第九部分：网络"><a href="#第九部分：网络" class="headerlink" title="第九部分：网络"></a>第九部分：网络</h3></li>
+<li>计算机网络和网络编程</li>
+<li>网络编程与网页编程的区别</li>
+<li>IP地址和端口号的介绍</li>
+<li>网络通信协议的介绍</li>
+<li>InetAddress类的方法使用</li>
+<li>Socket通信模型的介绍</li>
+<li>使用UDP实现数据的发送和接收</li>
+<li>使用TCP实现数据的发送和接收</li>
+<li>使用TCP实现文件的上传和下载</li>
+<li>使用TCP实现多人聊天</li>
+<li>URL和URLConnection使用介绍</li>
+<li>URLEncoder和URLDecoder的使用介绍</li>
+<li>基于HTTP协议访问网络资源</li>
+<li>Json解析</li>
+<li>基于HTTP协议实现网络文件的下载<h3 id="第十部分：反射"><a href="#第十部分：反射" class="headerlink" title="第十部分：反射"></a>第十部分：反射</h3></li>
+<li>反射机制的概念</li>
+<li>反射机制的作用</li>
+<li>反射机制的理解</li>
+<li>Class类的使用</li>
+<li>Class文件获取的三种方式</li>
+<li>获取Constructor对象</li>
+<li>获取私有Constructor对象</li>
+<li>获取Method对象</li>
+<li>获取私有Method对象</li>
+<li>Constructor的使用</li>
+<li>Method类的使用</li>
+<li>Field类的使用</li>
+<li>Modifier类的介绍</li>
+<li>反射使用练习</li>
+<li>反射机制在工厂设计模式中的应用<h2 id="第二阶段：JavaWeb"><a href="#第二阶段：JavaWeb" class="headerlink" title="第二阶段：JavaWeb"></a>第二阶段：JavaWeb</h2><h3 id="第一部分：HTML5"><a href="#第一部分：HTML5" class="headerlink" title="第一部分：HTML5"></a>第一部分：HTML5</h3></li>
+<li>html概述</li>
+<li>html基本标签</li>
+<li>图片标签</li>
+<li>超链接标签</li>
+<li>表格标签</li>
+<li>无序列表标签</li>
+<li>有序列表标签</li>
+<li>定义列表标签</li>
+<li>div标签</li>
+<li>语义化标签</li>
+<li>表单标签</li>
+<li>语义化表单元素</li>
+<li>框架标签</li>
+<li>特殊字符</li>
+<li>综合案例<h3 id="第二部分：CSS3"><a href="#第二部分：CSS3" class="headerlink" title="第二部分：CSS3"></a>第二部分：CSS3</h3></li>
+<li>CSS3简介和用途</li>
+<li>CSS3书写规范</li>
+<li>CSS3基本语法</li>
+<li>CSS3三种使用方式</li>
+<li>标签选择器</li>
+<li>Id选择器</li>
+<li>Class选择器</li>
+<li>属性选择器</li>
+<li>层次选择器</li>
+<li>文字、文本属性</li>
+<li>背景、列表属性</li>
+<li>尺寸、显示、轮廓属性</li>
+<li>浮动、定位属性</li>
+<li>盒子模型</li>
+<li>CSS3高级属性<h3 id="第三部分：JavaScript"><a href="#第三部分：JavaScript" class="headerlink" title="第三部分：JavaScript"></a>第三部分：JavaScript</h3></li>
+<li>JavaScript概述</li>
+<li>JavaScript发展史</li>
+<li>JavaScript组成</li>
+<li>数据类型</li>
+<li>运算符</li>
+<li>分支语句</li>
+<li>循环语句</li>
+<li>系统函数、自定义函数、匿名函数</li>
+<li>常见事件</li>
+<li>数组、字符串、日期对象</li>
+<li>正则表达式</li>
+<li>BOM对象：window、history、location</li>
+<li>DOM概念</li>
+<li>DOM操作：创建、修改内容、删除</li>
+<li>Css样式操作<h3 id="第四部分：MySQL使用"><a href="#第四部分：MySQL使用" class="headerlink" title="第四部分：MySQL使用"></a>第四部分：MySQL使用</h3></li>
+<li>数据库简介</li>
+<li>MySQL的安装与使用</li>
+<li>MySQL客户端和服务器配置</li>
+<li>用户权限管理</li>
+<li>DDL创建数据库和表</li>
+<li>约束与外键</li>
+<li>DML实现添加、修改、删除数据</li>
+<li>聚合函数、日期函数等</li>
+<li>DQL简单查询</li>
+<li>排序、分组、筛选</li>
+<li>多表查询</li>
+<li>子查询</li>
+<li>in和exists关键字</li>
+<li>分页查询</li>
+<li>Mysql SQL语句优化介绍<h3 id="第五部分：JDBC连接池"><a href="#第五部分：JDBC连接池" class="headerlink" title="第五部分：JDBC连接池"></a>第五部分：JDBC连接池</h3></li>
+<li>JDBC概述</li>
+<li>JDBC使用步骤</li>
+<li>Connection、Statement、ResultSet接口</li>
+<li>使用JDBC 完成数据库DML操作</li>
+<li>PreparedStatement对象</li>
+<li>大数据的操作</li>
+<li>批量处理与元数据</li>
+<li>事务处理</li>
+<li>隔离级别</li>
+<li>自定义连接池</li>
+<li>DBCP、C3p0连接池</li>
+<li>DBUtis工具类</li>
+<li>QueryRunner</li>
+<li>自定义结果集处理</li>
+<li>连接池知识总结<h3 id="第六部分：Servlet"><a href="#第六部分：Servlet" class="headerlink" title="第六部分：Servlet"></a>第六部分：Servlet</h3></li>
+<li>Tomcat与Eclipse的集成开发</li>
+<li>什么是Servlet</li>
+<li>Servlet的进化史</li>
+<li>Servlet的优化过程</li>
+<li>Servlet中应用的多线程概念</li>
+<li>Servlet接收客户端请求信息</li>
+<li>Servlet响应客户端信息</li>
+<li>Servlet的生命周期</li>
+<li>重定向写法</li>
+<li>转发写法</li>
+<li>转发和重定向区别</li>
+<li>HttpServletRequest获取中文乱码问题</li>
+<li>HttpServletResponse响应中文乱码问题</li>
+<li>Servlet路径映射问题</li>
+<li>Servlet多路径映射<h3 id="第七部分：JSP"><a href="#第七部分：JSP" class="headerlink" title="第七部分：JSP"></a>第七部分：JSP</h3></li>
+<li>什么是JSP</li>
+<li>JSP的内置对象</li>
+<li>透析JSP的本质</li>
+<li>JSTL+EL</li>
+<li>MVC介绍</li>
+<li>分层的重要性</li>
+<li>Web工程中事务实现</li>
+<li>Session的使用</li>
+<li>Cookie的使用</li>
+<li>web工程中连接池的使用</li>
+<li>实现用户的自动登录</li>
+<li>文件的上传、下载</li>
+<li>过滤器、 监听器</li>
+<li>反射、注解、泛型</li>
+<li>综合案例练习<h3 id="第八部分：AJAX"><a href="#第八部分：AJAX" class="headerlink" title="第八部分：AJAX"></a>第八部分：AJAX</h3></li>
+<li>Ajax技术背景</li>
+<li>Ajax技术的理解</li>
+<li>XMLHttpRequest使用步骤</li>
+<li>XMLHttpRequest GET/POST的区别</li>
+<li>同步请求&amp;异步请求</li>
+<li>同步请求&amp;异步请求的区别</li>
+<li>Ajax获取不同的返回值类型</li>
+<li>Ajax使用原生JavaScript和Jquery的区别</li>
+<li>Ajax响应状态处理</li>
+<li>JSON语法</li>
+<li>Java JSON 解析</li>
+<li>Java JSON 生成</li>
+<li>Java JSON 第三方工具快速解析</li>
+<li>JavaScript JSON转换</li>
+<li>Jquery JSON转换<h3 id="第九部分：jQuery"><a href="#第九部分：jQuery" class="headerlink" title="第九部分：jQuery"></a>第九部分：jQuery</h3></li>
+<li>jQuery介绍</li>
+<li>jQuery版本介绍</li>
+<li>jQuery对象和原生js对象介绍</li>
+<li>jQuery对象和原生js对象互相转化</li>
+<li>jQuery快速入门</li>
+<li>jQuery语法详解</li>
+<li>jQuery核心函数</li>
+<li>jQuery onload处理</li>
+<li>jQuery选择器</li>
+<li>jQuery 文档处理</li>
+<li>jQuery事件</li>
+<li>jQuery遍历操作</li>
+<li>jQuery自定义函数</li>
+<li>jQuery动画效果</li>
+<li>jQueryAJAX操作<h3 id="第十部分：Bootstrap"><a href="#第十部分：Bootstrap" class="headerlink" title="第十部分：Bootstrap"></a>第十部分：Bootstrap</h3></li>
+<li>Bootstrap介绍</li>
+<li>Bootstrap开发环境搭建</li>
+<li>Bootstrap的基本模板</li>
+<li>Bootstrap快速入门</li>
+<li>Bootstrap组成</li>
+<li>栅格系统</li>
+<li>利用栅格系统进行移动端页面适配</li>
+<li>Bootstrap全局Css样式</li>
+<li>Bootstrap修改原Css样式进行自定义</li>
+<li>Bootstrap的js组件</li>
+<li>Bootstrap的js组件样式修改</li>
+<li>集成Bootstrapjs插件之导航条</li>
+<li>集成Bootstrapjs插件之轮播图</li>
+<li>集成Bootstrapjs插件之弹出框</li>
+<li>Bootstrap进行项目整合<h2 id="第三阶段：Java框架"><a href="#第三阶段：Java框架" class="headerlink" title="第三阶段：Java框架"></a>第三阶段：Java框架</h2><h3 id="第一部分：Maven"><a href="#第一部分：Maven" class="headerlink" title="第一部分：Maven"></a>第一部分：Maven</h3></li>
+<li>Maven环境搭建</li>
+<li>Maven构建项目</li>
+<li>Maven本地仓库配置</li>
+<li>Maven中央仓库配置</li>
+<li>Maven基本概念</li>
+<li>Maven基本命令介绍</li>
+<li>Maven于Eclipse整合</li>
+<li>Maven于Idea整合</li>
+<li>Maven创建web工程</li>
+<li>pom.xml、依赖管理</li>
+<li>坐标、依赖、生命周期等</li>
+<li>Eclipse下的Maven使用</li>
+<li>Maven中 继承、聚合</li>
+<li>Maven构建SSH/SSM应用</li>
+<li>自动部署、持续集成、持续部署<h3 id="第二部分：Hibernate"><a href="#第二部分：Hibernate" class="headerlink" title="第二部分：Hibernate"></a>第二部分：Hibernate</h3></li>
+<li>Hibernate框架介绍</li>
+<li>Hibernate于其他框架和DBUtil工具类对比</li>
+<li>ORM思想</li>
+<li>Hibernate5与JPA关系介绍</li>
+<li>Hibernate.cfg.xml配置</li>
+<li>hbm.xml映射文件详解</li>
+<li>主键生成策略 PO对象三种状态分析与切换</li>
+<li>Hibernate5一级缓存分析与测试</li>
+<li>Hibernate5高级映射技术</li>
+<li>一对多映射</li>
+<li>多对多映射</li>
+<li>Hibernate5多表联合查询</li>
+<li>Hibernate5延迟加载</li>
+<li>Hibernate5加载策略</li>
+<li>二级缓存<h3 id="第三部分：Spring"><a href="#第三部分：Spring" class="headerlink" title="第三部分：Spring"></a>第三部分：Spring</h3></li>
+<li>框架原理介绍</li>
+<li>框架环境搭建</li>
+<li>快速入门</li>
+<li>创建Bean的方式及实现原理</li>
+<li>Bean种类</li>
+<li>Bean生命周期</li>
+<li>Bean的作用域</li>
+<li>Bean的注值方式</li>
+<li>SpEL</li>
+<li>整合Junit测试</li>
+<li>Web项目集成Spring</li>
+<li>注解装配Bean</li>
+<li>AOP思想、原理解剖</li>
+<li>传统方式实现AOP开发</li>
+<li>AspectJ介绍及实现AOP开发<h3 id="第四部分：Spring-MVC"><a href="#第四部分：Spring-MVC" class="headerlink" title="第四部分：Spring MVC"></a>第四部分：Spring MVC</h3></li>
+<li>Spring MVC 概述</li>
+<li>使用 @RequestMapping映射请求</li>
+<li>请求处理方法签名概述</li>
+<li>处理方法签名详细说明</li>
+<li>使用 HttpMessageConverter</li>
+<li>处理模型数据</li>
+<li>数据绑定流程剖析</li>
+<li>数据格式化</li>
+<li>数据校验</li>
+<li>视图和视图解析器</li>
+<li>处理方法的数据绑定</li>
+<li>视图和视图解析器</li>
+<li>文件上传下载</li>
+<li>JSON处理</li>
+<li>拦截器<h3 id="第五部分：MyBatis"><a href="#第五部分：MyBatis" class="headerlink" title="第五部分：MyBatis"></a>第五部分：MyBatis</h3></li>
+<li>MyBatis数据框架介绍</li>
+<li>MyBatis对比Hibernate框架</li>
+<li>MyBatis配置、查询数据</li>
+<li>MyBatis全局配置文件</li>
+<li>MyBatis全局配置文件元素详细介绍</li>
+<li>Mapper映射文件</li>
+<li>MyBatis两种开发方式</li>
+<li>MyBatis中别名配置</li>
+<li>MyBatis # 和 $ 拼接参数区别</li>
+<li>关联查询，动态sql</li>
+<li>MyBatis缓存机制、整合ehcache</li>
+<li>MyBatis二级缓存处理</li>
+<li>MyBatis、Spring、SpringMVC整合</li>
+<li>分页插件</li>
+<li>MyBatis逆向工程<h3 id="第六部分：WebService"><a href="#第六部分：WebService" class="headerlink" title="第六部分：WebService"></a>第六部分：WebService</h3></li>
+<li>WebService简介</li>
+<li>WebService主流框架</li>
+<li>SOAP协议</li>
+<li>WSDL讲解</li>
+<li>JAX-WS</li>
+<li>WebService与Spring整合</li>
+<li>JAXB</li>
+<li>JAX-RS</li>
+<li>WebService各种调用方式</li>
+<li>cxf的介绍</li>
+<li>cxf+jaxws基本</li>
+<li>cxf+jaxws+spring</li>
+<li>cxf+JAX-RS基本</li>
+<li>cxf+JAX-RS+spring</li>
+<li>综合案例<h3 id="第七部分：SVN"><a href="#第七部分：SVN" class="headerlink" title="第七部分：SVN"></a>第七部分：SVN</h3></li>
+<li>SVN简介</li>
+<li>SVN和Git对比</li>
+<li>SVN服务器搭建</li>
+<li>SVN创建仓库</li>
+<li>SVN创建用户以及分配权限</li>
+<li>SVN签出、提交、更新</li>
+<li>Eclipse整合svn插件</li>
+<li>Idea整合svn插件</li>
+<li>使用SVN更新提交</li>
+<li>SVN仓库分析</li>
+<li>SVN协同修改&amp;冲突解决</li>
+<li>SVN代码整合注意事项</li>
+<li>SVN权限管理</li>
+<li>SVN数据回滚</li>
+<li>TortoiseSVN<h3 id="第八部分：Activiti"><a href="#第八部分：Activiti" class="headerlink" title="第八部分：Activiti"></a>第八部分：Activiti</h3></li>
+<li>工作流介绍</li>
+<li>工作流引擎</li>
+<li>工作流使用步骤</li>
+<li>BPMN2.0规范</li>
+<li>Activiti5框架表结构</li>
+<li>Activiti5核心组件&amp;服务接口</li>
+<li>Activiti5插件安装&amp;整合Spring</li>
+<li>流程定义</li>
+<li>流程实例、任务、历史</li>
+<li>任务领取、流程变量</li>
+<li>排他网关、并行网关</li>
+<li>流程事件</li>
+<li>流程控制</li>
+<li>监听器</li>
+<li>简单整合shiro<h2 id="Java-云数据"><a href="#Java-云数据" class="headerlink" title="Java + 云数据"></a>Java + 云数据</h2><h3 id="第一部分：Linux版本"><a href="#第一部分：Linux版本" class="headerlink" title="第一部分：Linux版本"></a>第一部分：Linux版本</h3></li>
+<li>Linux简介和安装</li>
+<li>Linux和Windows的区别</li>
+<li>Linux远程登录</li>
+<li>Linux常用命令</li>
+<li>Linux文件管理</li>
+<li>Linux用户管理</li>
+<li>Linux用户组管理</li>
+<li>Linux磁盘管理</li>
+<li>Linux系统管理</li>
+<li>Linux常用文件</li>
+<li>Linux JDK安装</li>
+<li>Linux Tomcat安装</li>
+<li>Linux MySQL安装<br>2<h3 id="第二部分：FastDFS"><a href="#第二部分：FastDFS" class="headerlink" title="第二部分：FastDFS"></a>第二部分：FastDFS</h3></li>
+<li>FastDFS简介</li>
+<li>FastDFS单节点安装</li>
+<li>FastDFS Tracker和Storage节点操作</li>
+<li>FastDFS 配置Tracker服务器</li>
+<li>FastDFS 配置Storage服务器</li>
+<li>FastDFS JavaClient端 文件上传</li>
+<li>FastDFS JavaClient端 文件下载<br>3<h3 id="第三部分：MySQL优化"><a href="#第三部分：MySQL优化" class="headerlink" title="第三部分：MySQL优化"></a>第三部分：MySQL优化</h3></li>
+<li>优化数据访问</li>
+<li>重构查询的方式</li>
+<li>查询缓存</li>
+<li>切分查询</li>
+<li>MySQL索引</li>
+<li>MySQL锁</li>
+<li>MySQL执行计划</li>
+<li>MySQL存储引擎</li>
+<li>Schema与数据类型优化<br>4<h3 id="第四部分：Nginx反向代理"><a href="#第四部分：Nginx反向代理" class="headerlink" title="第四部分：Nginx反向代理"></a>第四部分：Nginx反向代理</h3></li>
+<li>Nginx反向代理介绍</li>
+<li>Nginx 下载和安装</li>
+<li>Nginx 编译和启动、访问</li>
+<li>在Linux下搭建Nginx集群</li>
+<li>在Windows搭建Nginx集群</li>
+<li>解决Session共享问题<br>5<h3 id="第五部分：Quartz-作业调度"><a href="#第五部分：Quartz-作业调度" class="headerlink" title="第五部分：Quartz 作业调度"></a>第五部分：Quartz 作业调度</h3></li>
+<li>Quartz作业调度简介</li>
+<li>Quartz作业调度执行以及持久性</li>
+<li>Quartz基本使用</li>
+<li>Quartz核心类讲解</li>
+<li>Quartz Trigger 触发器</li>
+<li>Quartz Job&amp;JobDetail</li>
+<li>Quartz Calendars日历讲解</li>
+<li>JobListener监听器和TriggerListener监听器</li>
+<li>Spring整合Quartz<br>6<h3 id="第六部分：Redis-高性能-Key-Value-数据库"><a href="#第六部分：Redis-高性能-Key-Value-数据库" class="headerlink" title="第六部分：Redis 高性能(Key-Value)数据库"></a>第六部分：Redis 高性能(Key-Value)数据库</h3></li>
+<li>NoSQL 发展史简介</li>
+<li>Redis 简介</li>
+<li>Redis 安装以及调试</li>
+<li>Redis 常用指令</li>
+<li>Redis 高级使用(主从复制、哨兵模式、持久化机制)</li>
+<li>Jedis的基本使用</li>
+<li>SSM框架基于Redis实现缓存</li>
+<li>Redis 连接单机版</li>
+<li>Redis 连接单机版使用连接池</li>
+<li>封装和整合Spring</li>
+<li>Redis 集群搭建<h3 id="第七部分：Shiro-安全-权限-框架"><a href="#第七部分：Shiro-安全-权限-框架" class="headerlink" title="第七部分：Shiro 安全(权限)框架"></a>第七部分：Shiro 安全(权限)框架</h3></li>
+<li>Shiro功能简介</li>
+<li>Shiro框架介绍</li>
+<li>ShiroFilter工作原理</li>
+<li>Shiro 身份认证</li>
+<li>Shiro Realm以及Authenticator</li>
+<li>Shiro拦截器和Permissions(授权)</li>
+<li>Shiro 自定义拦截器</li>
+<li>Shiro Session会话</li>
+<li>Shiro RememberMe功能</li>
+<li>SSM集成Shiro综合权限菜单<h3 id="第八部分：Lucene-amp-Solr全文检索"><a href="#第八部分：Lucene-amp-Solr全文检索" class="headerlink" title="第八部分：Lucene&amp;Solr全文检索"></a>第八部分：Lucene&amp;Solr全文检索</h3></li>
+<li>Lucene 搜索引擎介绍</li>
+<li>Lucene 中文分词器配置</li>
+<li>Lucene 索引的维护包括创建、删除、修改操作</li>
+<li>Lucene Query 各种查询方法</li>
+<li>Lucene 高亮显示</li>
+<li>Lucene Facet分面检索</li>
+<li>Solr简介</li>
+<li>Solr 安装和配置</li>
+<li>Solr 索引库管理</li>
+<li>什么是SolrCloud</li>
+<li>Solr集群的系统架构</li>
+<li>将搜索功能切换到集群版<h3 id="第九部分：Zookeeper-分布式系统"><a href="#第九部分：Zookeeper-分布式系统" class="headerlink" title="第九部分：Zookeeper 分布式系统"></a>第九部分：Zookeeper 分布式系统</h3></li>
+<li>Zookeeper 简介</li>
+<li>Zookeeper 特点</li>
+<li>Zookeeper 安装和配置</li>
+<li>Zookeeper数据类型</li>
+<li>Zookeeper服务中操作</li>
+<li>Zookeeper Wacth触发器</li>
+<li>Zookeeper分布式应用<h3 id="第十部分：MyCAT-大数据集群"><a href="#第十部分：MyCAT-大数据集群" class="headerlink" title="第十部分：MyCAT 大数据集群"></a>第十部分：MyCAT 大数据集群</h3></li>
+<li>MyCat 简介</li>
+<li>MyCat的下载和安装</li>
+<li>MyCat分片配置</li>
+<li>MyCat分片使用和测试</li>
+<li>MyCat读写分离</li>
+<li>MyCat 实现从MySQL主从复制<h3 id="第十一部分：Dubbo实现分布式架构"><a href="#第十一部分：Dubbo实现分布式架构" class="headerlink" title="第十一部分：Dubbo实现分布式架构"></a>第十一部分：Dubbo实现分布式架构</h3></li>
+<li>Dubbo简介</li>
+<li>单一应用框架</li>
+<li>垂直应用框架</li>
+<li>分布式应用框架</li>
+<li>流动计算机架构</li>
+<li>Dubbo 能做什么</li>
+<li>Dubbo 实现原理</li>
+<li>Dubbo 分布式集群模型</li>
+<li>Dubbo管理控制台安装</li>
+<li>Dubbo 集成 SSM<h3 id="第十二部分：ActiveMQ-消息队列"><a href="#第十二部分：ActiveMQ-消息队列" class="headerlink" title="第十二部分：ActiveMQ 消息队列"></a>第十二部分：ActiveMQ 消息队列</h3></li>
+<li>ActiveMQ简介</li>
+<li>JMS简介</li>
+<li>MQ 消息中间件</li>
+<li>ActiveMQ 安装和使用</li>
+<li>ActiveMQ 消息过滤</li>
+<li>ActiveMQ 消息发布和订阅模式</li>
+<li>ActiveMQ消息持久化</li>
+<li>ActiveMQ与Spring 整合<h3 id="第十三部分：分布式事务和单点登录"><a href="#第十三部分：分布式事务和单点登录" class="headerlink" title="第十三部分：分布式事务和单点登录"></a>第十三部分：分布式事务和单点登录</h3></li>
+<li>阶段提交协议讲解</li>
+<li>使用消息队列来避免分布式事务</li>
+<li>如何可靠保存凭证</li>
+<li>业务与消息解耦方式</li>
+<li>如何解决消息重复投递的问题</li>
+<li>什么是单点登录</li>
+<li>单点登录技术的实现机制<h3 id="第十四部分：分布式框架原理-采用视频资料教学"><a href="#第十四部分：分布式框架原理-采用视频资料教学" class="headerlink" title="第十四部分：分布式框架原理(采用视频资料教学)"></a>第十四部分：分布式框架原理(采用视频资料教学)</h3></li>
+<li>传统垂直mvc项目</li>
+<li>垂直架构的缺点</li>
+<li>RPC架构</li>
+<li>RPC架构的核心技术点5. RPC架构的问题6. SOA服务化架构7. 框架设计原理</li>
+<li>框架性能、可靠性、功能</li>
+<li>协议栈(通信模型、协议消息定义、安全性设计)</li>
+<li>服务路由</li>
+<li>集群容错<h3 id="第十五部分：基于SpringMVC的集成单元测试MockMVC"><a href="#第十五部分：基于SpringMVC的集成单元测试MockMVC" class="headerlink" title="第十五部分：基于SpringMVC的集成单元测试MockMVC"></a>第十五部分：基于SpringMVC的集成单元测试MockMVC</h3></li>
+<li>Mock测试框架的介绍</li>
+<li>SpringMVC Mock 配置的步骤</li>
+<li>基于SpringMVC单元测试实战案例</li>
+<li>基于SpringMVC+JPA单元测试实战案例<h3 id="第十六部分：SpringBoot-快速构建JavaEE项目"><a href="#第十六部分：SpringBoot-快速构建JavaEE项目" class="headerlink" title="第十六部分：SpringBoot 快速构建JavaEE项目"></a>第十六部分：SpringBoot 快速构建JavaEE项目</h3></li>
+<li>基于SpringBoot 的thymeleaf 模板引擎</li>
+<li>基于SpringBoot 多模块实战开发</li>
+<li>基于SpringBoot 文件上传</li>
+<li>基于SpringBoot Data Solr搜索引擎开发</li>
+<li>基于SpringBoot Email邮件发送</li>
+<li>基于SpringBoot 的Redis实战开发</li>
+<li>基于SpringBoot 的WebSocket实战开发</li>
+<li>基于SpringBoot 的ActiveMQ消息队列</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/18/weex/" rel="next" title="weex">
+                <i class="fa fa-chevron-left"></i> weex
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjU3My8xOTEyMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/baracktocat.jpg" alt="Kunlin Gou">
+            
+              <p class="site-author-name" itemprop="name">Kunlin Gou</p>
+              <p class="site-description motion-element" itemprop="description">个人博客，欢迎交流和学习</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kunlingou" title="GitHub &rarr; https://github.com/kunlingou" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:kunlingou@foxmail.com" title="E-Mail &rarr; mailto:kunlingou@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一阶段：Java基础"><span class="nav-number">1.</span> <span class="nav-text">第一阶段：Java基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部分：Java开发介绍"><span class="nav-number">1.1.</span> <span class="nav-text">第一部分：Java开发介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分：Java数组"><span class="nav-number">1.2.</span> <span class="nav-text">第二部分：Java数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三部分：Java面向对象"><span class="nav-number">1.3.</span> <span class="nav-text">第三部分：Java面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四部分：常用基础类"><span class="nav-number">1.4.</span> <span class="nav-text">第四部分：常用基础类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五部分：集合"><span class="nav-number">1.5.</span> <span class="nav-text">第五部分：集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六部分：IO流"><span class="nav-number">1.6.</span> <span class="nav-text">第六部分：IO流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七部分：多线程"><span class="nav-number">1.7.</span> <span class="nav-text">第七部分：多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八部分：异常"><span class="nav-number">1.8.</span> <span class="nav-text">第八部分：异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九部分：网络"><span class="nav-number">1.9.</span> <span class="nav-text">第九部分：网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十部分：反射"><span class="nav-number">1.10.</span> <span class="nav-text">第十部分：反射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二阶段：JavaWeb"><span class="nav-number">2.</span> <span class="nav-text">第二阶段：JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部分：HTML5"><span class="nav-number">2.1.</span> <span class="nav-text">第一部分：HTML5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分：CSS3"><span class="nav-number">2.2.</span> <span class="nav-text">第二部分：CSS3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三部分：JavaScript"><span class="nav-number">2.3.</span> <span class="nav-text">第三部分：JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四部分：MySQL使用"><span class="nav-number">2.4.</span> <span class="nav-text">第四部分：MySQL使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五部分：JDBC连接池"><span class="nav-number">2.5.</span> <span class="nav-text">第五部分：JDBC连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六部分：Servlet"><span class="nav-number">2.6.</span> <span class="nav-text">第六部分：Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七部分：JSP"><span class="nav-number">2.7.</span> <span class="nav-text">第七部分：JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八部分：AJAX"><span class="nav-number">2.8.</span> <span class="nav-text">第八部分：AJAX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九部分：jQuery"><span class="nav-number">2.9.</span> <span class="nav-text">第九部分：jQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十部分：Bootstrap"><span class="nav-number">2.10.</span> <span class="nav-text">第十部分：Bootstrap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三阶段：Java框架"><span class="nav-number">3.</span> <span class="nav-text">第三阶段：Java框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部分：Maven"><span class="nav-number">3.1.</span> <span class="nav-text">第一部分：Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分：Hibernate"><span class="nav-number">3.2.</span> <span class="nav-text">第二部分：Hibernate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三部分：Spring"><span class="nav-number">3.3.</span> <span class="nav-text">第三部分：Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四部分：Spring-MVC"><span class="nav-number">3.4.</span> <span class="nav-text">第四部分：Spring MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五部分：MyBatis"><span class="nav-number">3.5.</span> <span class="nav-text">第五部分：MyBatis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六部分：WebService"><span class="nav-number">3.6.</span> <span class="nav-text">第六部分：WebService</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七部分：SVN"><span class="nav-number">3.7.</span> <span class="nav-text">第七部分：SVN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八部分：Activiti"><span class="nav-number">3.8.</span> <span class="nav-text">第八部分：Activiti</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-云数据"><span class="nav-number">4.</span> <span class="nav-text">Java + 云数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部分：Linux版本"><span class="nav-number">4.1.</span> <span class="nav-text">第一部分：Linux版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分：FastDFS"><span class="nav-number">4.2.</span> <span class="nav-text">第二部分：FastDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三部分：MySQL优化"><span class="nav-number">4.3.</span> <span class="nav-text">第三部分：MySQL优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四部分：Nginx反向代理"><span class="nav-number">4.4.</span> <span class="nav-text">第四部分：Nginx反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五部分：Quartz-作业调度"><span class="nav-number">4.5.</span> <span class="nav-text">第五部分：Quartz 作业调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六部分：Redis-高性能-Key-Value-数据库"><span class="nav-number">4.6.</span> <span class="nav-text">第六部分：Redis 高性能(Key-Value)数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七部分：Shiro-安全-权限-框架"><span class="nav-number">4.7.</span> <span class="nav-text">第七部分：Shiro 安全(权限)框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八部分：Lucene-amp-Solr全文检索"><span class="nav-number">4.8.</span> <span class="nav-text">第八部分：Lucene&amp;Solr全文检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九部分：Zookeeper-分布式系统"><span class="nav-number">4.9.</span> <span class="nav-text">第九部分：Zookeeper 分布式系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十部分：MyCAT-大数据集群"><span class="nav-number">4.10.</span> <span class="nav-text">第十部分：MyCAT 大数据集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十一部分：Dubbo实现分布式架构"><span class="nav-number">4.11.</span> <span class="nav-text">第十一部分：Dubbo实现分布式架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十二部分：ActiveMQ-消息队列"><span class="nav-number">4.12.</span> <span class="nav-text">第十二部分：ActiveMQ 消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十三部分：分布式事务和单点登录"><span class="nav-number">4.13.</span> <span class="nav-text">第十三部分：分布式事务和单点登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十四部分：分布式框架原理-采用视频资料教学"><span class="nav-number">4.14.</span> <span class="nav-text">第十四部分：分布式框架原理(采用视频资料教学)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十五部分：基于SpringMVC的集成单元测试MockMVC"><span class="nav-number">4.15.</span> <span class="nav-text">第十五部分：基于SpringMVC的集成单元测试MockMVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十六部分：SpringBoot-快速构建JavaEE项目"><span class="nav-number">4.16.</span> <span class="nav-text">第十六部分：SpringBoot 快速构建JavaEE项目</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kunlin Gou</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/02/19/Java学习路线/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+  
+  
+  
+    
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css">
+
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.0"></script>
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'EVsneirELmgOUBYlT40edXpt-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'EVsneirELmgOUBYlT40edXpt-gzGzoHsz',
+                'X-LC-Key': 'n16mFPPYxAOdKRoIPef3tUSV',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
