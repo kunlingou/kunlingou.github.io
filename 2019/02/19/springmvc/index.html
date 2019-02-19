@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理前端控制器、处理器映射器、处理器适配器、视图解析器">
+  <meta name="description" content="参考视频：黑马视频 基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理 前端控制器、处理器映射器、处理器适配器、视图解析器 前端控制器DispacherServlet:接收用户请求,请求">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springmvc">
 <meta property="og:url" content="https://www.kunlingou.club/2019/02/19/springmvc/index.html">
 <meta property="og:site_name" content="kunlingou">
-<meta property="og:description" content="基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理前端控制器、处理器映射器、处理器适配器、视图解析器">
+<meta property="og:description" content="参考视频：黑马视频 基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理 前端控制器、处理器映射器、处理器适配器、视图解析器 前端控制器DispacherServlet:接收用户请求,请求">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-19T13:37:05.389Z">
+<meta property="og:updated_time" content="2019-02-19T15:55:36.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springmvc">
-<meta name="twitter:description" content="基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理前端控制器、处理器映射器、处理器适配器、视图解析器">
+<meta name="twitter:description" content="参考视频：黑马视频 基础知识什么是springmvc？ springmvc 是 spring 框架的一个模块。 springmvc 是基于mvc的web框架。 mvc 是一个设计模式。 dao，orm，jee，web，aop，core。 b/s系统下模型无法将数据填充到视图。框架原理 前端控制器、处理器映射器、处理器适配器、视图解析器 前端控制器DispacherServlet:接收用户请求,请求">
 
 
 
@@ -432,7 +432,7 @@
                 
               
 
-              <time title="创建时间：2019-02-19 21:15:11 / 修改时间：21:37:05" itemprop="dateCreated datePublished" datetime="2019-02-19T21:15:11+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-19 21:15:11 / 修改时间：23:55:36" itemprop="dateCreated datePublished" datetime="2019-02-19T21:15:11+08:00">2019-02-19</time>
             
 
             
@@ -500,12 +500,32 @@
       
 
       
-        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="什么是springmvc？"><a href="#什么是springmvc？" class="headerlink" title="什么是springmvc？"></a>什么是springmvc？</h4><ul>
+        <p>参考视频：<a href="http://yun.itheima.com/course/8.html?stt" target="_blank" rel="noopener">黑马视频</a></p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="什么是springmvc？"><a href="#什么是springmvc？" class="headerlink" title="什么是springmvc？"></a>什么是springmvc？</h4><ul>
 <li>springmvc 是 spring 框架的一个模块。</li>
 <li>springmvc 是基于mvc的web框架。</li>
 <li>mvc 是一个设计模式。</li>
 <li>dao，orm，jee，web，aop，core。</li>
-<li>b/s系统下模型无法将数据填充到视图。<h4 id="框架原理"><a href="#框架原理" class="headerlink" title="框架原理"></a>框架原理</h4>前端控制器、处理器映射器、处理器适配器、视图解析器</li>
+<li>b/s系统下模型无法将数据填充到视图。<h4 id="框架原理"><a href="#框架原理" class="headerlink" title="框架原理"></a>框架原理</h4></li>
+<li>前端控制器、处理器映射器、处理器适配器、视图解析器</li>
+<li>前端控制器DispacherServlet:接收用户请求,请求查找handler,请求执行handler，请求视图解析,视图渲染</li>
+<li>处理器映射器HandlerMapping:查找handler，返回执行链HandlerExecutionChain</li>
+<li>处理器适配器handlerAdapter:执行handler,返回ModelAndView</li>
+<li>Handler 处理器：controler,返回ModelAndView</li>
+<li>视图解析器View resolver，返回view</li>
+</ul>
+<h4 id="实例一：使用springmvc和mybatis进行商品列表查询"><a href="#实例一：使用springmvc和mybatis进行商品列表查询" class="headerlink" title="实例一：使用springmvc和mybatis进行商品列表查询"></a>实例一：使用springmvc和mybatis进行商品列表查询</h4><ul>
+<li><p><a href="https://blog.csdn.net/a11441555/article/details/79481931" target="_blank" rel="noopener">Java SpringMvc Jar包下载及部署方式</a></p>
+</li>
+<li><p>配置前端控制器</p>
+</li>
+<li>配置处理器映射器</li>
+<li>配置处理器适配器</li>
+<li><p>配置视图解析器</p>
+</li>
+<li><p>访问地址：<a href="http://localhost:8080/firstproject190219/queryItems.action" target="_blank" rel="noopener">http://localhost:8080/firstproject190219/queryItems.action</a></p>
+</li>
+<li>源码地址：链接：<a href="https://pan.baidu.com/s/1zj25GRHiOfdD4fWMxVNlsg" target="_blank" rel="noopener">https://pan.baidu.com/s/1zj25GRHiOfdD4fWMxVNlsg</a> 提取码：nd4f </li>
 </ul>
 
       
@@ -732,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是springmvc？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是springmvc？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#框架原理"><span class="nav-number">1.2.</span> <span class="nav-text">框架原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是springmvc？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是springmvc？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#框架原理"><span class="nav-number">1.2.</span> <span class="nav-text">框架原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例一：使用springmvc和mybatis进行商品列表查询"><span class="nav-number">1.3.</span> <span class="nav-text">实例一：使用springmvc和mybatis进行商品列表查询</span></a></li></ol></li></ol></div>
             
 
           </div>
