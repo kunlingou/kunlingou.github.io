@@ -251,7 +251,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档1</a>
 
   </li>
         
@@ -451,7 +451,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-01 20:42:10" itemprop="dateModified" datetime="2019-03-01T20:42:10+08:00">2019-03-01</time>
+                <time title="修改时间：2019-03-02 11:02:52" itemprop="dateModified" datetime="2019-03-02T11:02:52+08:00">2019-03-02</time>
               
             
           </span>
@@ -551,7 +551,7 @@
 </ul>
 </li>
 <li><p>pojo中添加校验规则</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//校验名称在1到10个字符中间</span><br><span class="line">@Size(min=1,max=30,message=&quot;&#123;items.name.length.error&#125;&quot;)</span><br><span class="line">//非空校验</span><br><span class="line">@NotNull(message=&quot;&#123;items.createtime.isNull&#125;&quot;)</span><br><span class="line">private Date createtime;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CustomVaildationMessages.properties</span><br><span class="line">#添加校验错误提交信息</span><br><span class="line">items.name.length.error=校验名称在1到10个字符中间</span><br><span class="line">items.createtime.isNull=请输入商品的生产日期</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//校验名称在1到10个字符中间</span><br><span class="line">@Size(min=1,max=30,message=&quot;&#123;items.hexname.length.error&#125;&quot;)</span><br><span class="line">//非空校验</span><br><span class="line">@NotNull(message=&quot;&#123;items.createtime.isNull&#125;&quot;)</span><br><span class="line">private Date createtime;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CustomVaildationMessages.properties</span><br><span class="line">#添加校验错误提交信息</span><br><span class="line">items.name.length.error=校验名称在1到10个字符中间</span><br><span class="line">items.createtime.isNull=请输入商品的生产日期</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>捕获校验信息</p>
 </li>
