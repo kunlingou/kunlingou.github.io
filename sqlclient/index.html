@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h3>Hello! this is sqlclient</h3>
+    <textarea id="sql" style="width:100%;height:100px">1321</textarea>
+    <div>
+        <button type="button" onclick="query()">查询</button>
+    </div>
+    <div id = 'result'></div>
+    <script>
+        function query(){
+            $.ajax({
+                url:"http://kkkkk.nat123.net:30056/sqlclient/query",
+                data:JSON.stringify({"sql":$("#sql").val()}),
+                type:"POST",
+                dataType:"json",
+                contentType:"application/json;charset=utf-8",
+                success:function(data){
+                    if(data.code == 0){
+                        var result = data.result;
+                        var htmlStr = "<textarea style='width:100%;height:500px'>"+JSON.stringify(result.data)+"</textarea>";
+                        $("#result").html(htmlStr);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
