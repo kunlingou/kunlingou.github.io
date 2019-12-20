@@ -4,17 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <title>dsc</title>
+	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 </head>
 <body>
-    <h3>Hello! this is sqlclient</h3>
-    <textarea id="sql" style="width:100%;height:100px">1321</textarea>
-    <div>
-        <button type="button" onclick="query()">查询</button>
-    </div>
-    <div id = 'result'></div>
+    <div style="height:100%">
+		<h3>Hello! this is sqlclient</h3>
+		<textarea id="sql" style="width:100%;height:100px">select sysdate() from dual</textarea>
+		<div>
+			<button type="button" onclick="query()">查询</button>
+		</div>
+		<div id="tt" class="easyui-tabs" selected=2 style="width:100%;height:100%;">
+			<div title="信息" style="padding:0px;display:none;">
+				<table id="pg" style="width:300px"></table>
+			</div>
+			<div title="结果" style="overflow:auto;padding:0px;display:none;">
+				<table id="dg"></table>
+			</div>
+		</div>
+	</div>
     <script>
+		var colums = [];
+		var datagrid = {
+			columns:[colums],
+			data: [],
+			autoRowHeight: true,
+			pagination: false,
+			rownumbers: true,
+			fitColumns:true,
+			onLoadSuccess:function(data){
+				var rows=data.rows;//得到行数据
+				var columnMaxCharacter=new Array();//该列最大字符数
+				//遍历所有行数据,获得该列数据的最大字符数
+				for(var i=0;i<rows.length;i++){
+				    for(var j=0;j<colums.length;j++){//遍历需要设置的列
+						let field = colums[j]['field'];
+				        var s=eval("rows["+i+"]."+field);
+				        //屏蔽html标签
+				         s=s.replace("<center>","");
+				         s=s.replace("</center>","");
+				        if((typeof columnMaxCharacter[field])=='undefined'){
+				            columnMaxCharacter[field]=0;
+				        }
+				        
+				       if(s.length>columnMaxCharacter[field]){
+				           columnMaxCharacter[field]=s.length;
+				        }
+				       
+				    }
+				}
+				
+				//设置列宽度和字体
+				for(var j=0;j<colums.length;j++){
+					let field = colums[j][field];
+				     //得到该列的字体
+				//    alert($("td[field='"+cls[j]+"'] div").get(0).currentStyle);
+				// var fontSize=$("td[field='"+cls[j]+"'] div").get(0).currentStyle.fontSize;//获得字体大小
+				    //  fontSize= fontSize.replace("px","");//去掉px方便运算
+				    var fontSize=12;
+				     var w=fontSize*(columnMaxCharacter[field]+1);//求出宽度
+				     //设定该列的宽度
+				     $("td[field='"+field+"'] div").width(w);
+				}
+			}
+		};
+		var infoData = {};
+		$(function(){
+			$('#pg').propertygrid({
+				width: 800,
+		        height: 'auto',
+		        showGroup: true,
+		        scrollbarSize: 0,
+			});
+			$('#tt').tabs({
+				selected:1,
+				onSelect:function(title){
+					if('信息' == title){
+						$('#pg').propertygrid('loadData',infoData);
+					}else{
+						$('#dg').datagrid(datagrid);
+					}
+				}
+			});
+		});
         function query(){
             $.ajax({
                 url:"http://kkkkk.nat123.net:37739/sqlclient/query",
@@ -22,15 +97,62 @@
                 type:"POST",
                 dataType:"json",
                 contentType:"application/json;charset=utf-8",
-                success:function(data){
-                    if(data.code == 0){
-                        var result = data.result;
-                        var htmlStr = "<textarea style='width:100%;height:500px'>"+JSON.stringify(result.data)+"</textarea>";
-                        $("#result").html(htmlStr);
+                success:function(res){
+                    if(res.code == 0){
+						debugger
+						reloadInfoGrid(res);
+						$('#pg').propertygrid('loadData',infoData);
+						reloadDataGrid(res);
+						$('#dg').datagrid(datagrid);
                     }
                 }
             });
-        }
+		};
+		function reloadInfoGrid(res){
+			let result = res.result;
+			infoData = [{
+				name:'executing time',
+				value:res.date,
+				group:'informations',
+				editor:'text'
+			},{
+				name:'rows',
+				value:result.rows,
+				group:'informations',
+				editor:'text'
+			},{
+				name:'cols',
+				value:result.cols,
+				group:'informations',
+				editor:'text'
+			},{
+				name:'type',
+				value:result.type,
+				group:'informations',
+				editor:'text'
+			},{
+				name:'spendTime',
+				value:result.spendTime,
+				group:'informations',
+				editor:'text'
+			}];
+		};
+		function reloadDataGrid(res){
+			let result = res.result;
+			let rows = result.rows;
+			let cols = result.cols;
+			let data = result.data;
+			datagrid.data = data;
+			let keys = Object.keys(data[0]);
+			colums.length = 0;
+			for(let key of keys){
+				colums.push({
+					field:key,
+					title:key,
+					width:100
+				});
+			}
+		};
     </script>
 </body>
 </html>
